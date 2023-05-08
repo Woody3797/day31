@@ -1,0 +1,8 @@
+.num {
+    width: 10vw;
+    height: auto;
+    border: 2px solid grey;
+    border-radius: 5px;
+    box-shadow: 5px 5px beige;
+    margin: 3px;
+}
