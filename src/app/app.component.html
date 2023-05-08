@@ -2,7 +2,18 @@
 <app-nums [value]="1"></app-nums>
 <hr>
 <button type="button" (click)="generateNums()">Generate Numbers</button>
-<app-nums *ngFor="let n of values; let i = index" [value]="n"> {{ values }} </app-nums>
+<div *ngIf="selectedNums.length > 0 else noSelection">
+    <span *ngFor="let n of selectedNums"> {{ n }}, </span>
+</div>
+<ng-template #noSelection>
+    <div>Please select your numbers</div>
+</ng-template>
+
+<app-nums *ngFor="let n of values; let i = index" 
+    [value]="n"
+    (onSelected)="valueSelected($event)">
+</app-nums>
+<hr>
 <app-pic-carousel [pictures]="pics"></app-pic-carousel>
 <hr>
 <app-pic-frame image="https://hips.hearstapps.com/hmg-prod/images/beautiful-smooth-haired-red-cat-lies-on-the-sofa-royalty-free-image-1678488026.jpg" altText="cute cat"></app-pic-frame>

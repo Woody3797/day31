@@ -13,6 +13,7 @@ export class AppComponent {
     ]
 
     values: number[] = [];
+    selectedNums: number[] = [];
 
     constructor() {
         this.generateNums();
@@ -27,5 +28,10 @@ export class AppComponent {
         }
 
         console.info(this.values);
+    }
+
+    valueSelected(n: number) {
+        this.selectedNums.push(n)
+        console.info('value selected: ' + n);
     }
 }
